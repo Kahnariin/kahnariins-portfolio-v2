@@ -1,0 +1,295 @@
+
+/*Setup*/
+@font-face {
+    font-family: 'Hacked';
+    src: url(fonts/Hacked-KerX.ttf);
+}
+@font-face {
+    font-family: "Goblin";
+    src: url(fonts/GlitchGoblin-2O87v.ttf);
+}
+:root{
+    --night: #110f0f;
+    --jet: #363636;
+    --eerie-black:#1f2021;
+    --persimmon: #ED5a02;
+    --sienna: #792d01;
+    --van-dyke: #43292d;
+    --licorice:#261719;
+    --white: #ffffff;
+    --white2: #eeeeee;
+    --yellow: #F0A500;    
+}
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: var(--eerie-black);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Hacked';
+    cursor: default;
+}
+h1{
+    font-size: 40px;
+}
+
+/* Navigation Settings*/
+.nav{
+    display: flex;
+    justify-content: flex-end;
+    background-color: var(--eerie-black);
+    top: 0;
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    font-size: 20px;
+    border:none;
+}
+.nav-list{
+    list-style: none;
+    display: flex;
+}
+.nav-list a{
+    text-decoration:none;
+    color: var(--white);
+    font-family:'Goblin';
+    padding: 0 10px;
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.6);
+}
+.nav-list a:hover{
+    border-bottom: 0.1em solid var(--persimmon);
+    color: var(--yellow);
+    cursor: pointer;
+    transition: color .2s ease-in-out;
+    transition: border-bottom .1s ease-in-out;
+}
+section{
+    min-height: 100vh;
+    padding: 70px 0;
+}
+
+/* Welcome Section*/
+#welcome-section{
+
+    color: var(--white);
+    display: flex;
+    flex-direction:column ;
+    background-color: rgba(0,0,0, 0.5); /* Black w/opacity/see-through */
+
+    
+}
+
+#welcome-section::before{
+    content: "";
+    background-image: url(pics/pexels-karol-d-841228.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(3px);
+    -webkit-filter:blur(3px);
+    background-color: var(--night);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right: 0;
+    z-index: -1;
+}
+
+#welcome-section h1{
+    margin-top:30vh;
+    font-size: 65px;
+    letter-spacing: 7px;
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.6);
+}
+#welcome-section p{
+    color: var(--white2);
+    font-size: 25px;
+    margin: 25px 0;
+    font-style: italic;
+    font-family: 'Goblin';
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.6);
+}
+.welcomehr{
+    border-top: 3px solid var(--persimmon);
+    width: 50%;
+    display: inherit;
+    justify-content: space-between;
+    background-color: var(--persimmon);
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-radius: 50%;
+    flex-direction:inherit;
+    justify-content: inherit;
+    position: inherit;
+    margin: 12px auto;
+}
+
+
+/* Projects Section*/
+#projects{
+    background: linear-gradient(-75deg, var(--sienna)5%, var(--persimmon)95%);
+}
+#projects .project-tile{
+    height: 525px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--eerie-black);
+    color: var(--white);
+    box-shadow: 8px 8px 10px 5px rgba(0, 0, 0, .3);
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .project-tile img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#projects .projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding:20px;
+    place-items: center;
+    max-width: 1200px;
+    margin: auto;
+
+
+}
+#projects h1{
+    border-bottom:3px solid var(--eerie-black);
+    color: var(--night);
+    width: fit-content;
+    margin: auto;
+    letter-spacing: 12px;
+       
+}
+
+#projects .project-tile p{
+    font-size: 25px;
+    padding: 10px;
+    font-family: 'Goblin';
+}
+#projects .project-tile span{
+    opacity: 0%;
+    padding: 0 5px;
+}
+#projects .project-tile:hover span{
+    opacity: 100%;
+    color: var(--persimmon);
+    transition: opacity .2s ease-in-out;
+}
+#projects .project-tile:hover{
+    transition: color .2s ease-in-out;
+    color: var(--yellow);
+}
+a{
+    text-decoration: none;
+    color: var(--white)
+}
+.code{
+    color: var(--eerie-black);
+    transition: color 0.25s ease-out;
+}
+.show-all{
+    font-family: 'Hacked';
+    background-color: var(--eerie-black);
+    cursor: pointer;
+    font-size: 25px;
+    padding: 5px 15px;
+    text-decoration: none;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    box-shadow: 4px 4px 5px 2px rgba(0, 0, 0, .3);
+    color: var(--white)
+}
+.show-all i{
+    opacity: 0%;
+    padding: 0 5px;
+}
+.show-all:hover i{
+    opacity: 100%;
+    color: var(--persimmon);
+    transition: opacity .2s ease-in-out;
+}
+.show-all:hover{
+    transition: color .2s ease-in-out;
+    color: var(--yellow)
+}
+
+/*Contacts Section*/
+#contact h1{
+    color: var(--white);
+    letter-spacing: 10px;
+    font-size: 65px;
+    padding: 12px 0;
+}
+.coffee{
+    color: var(--white2);
+    font-size: 30px;
+    font-family: "Goblin";
+    cursor: default;
+    margin-top: 50px;
+}
+.contact-links{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 40px;
+}
+.contact-details{
+    text-decoration: none;
+    transition: transform 5s ease-in-out;
+    transition: color .2s ease-in-out;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    font-size: 25px;
+}
+.contact-details:hover{
+    transform: translateY(10px);
+    color: var(--persimmon);
+}
+.btn{
+    background-color: transparent;
+    font-family: 'Goblin';
+}
+
+/* Footer */
+footer{
+    background-color: var(--sienna);
+    font-size: 25px;
+    font-family: 'Goblin';
+    padding: 30px;
+    color: var(--white2)
+}
+
+@media only screen and (width < 700px) {
+    h1{
+        font-size: 20px;
+    }
+    #projects .project-tile{
+        height: 600px;
+        width: 100%
+    }
+    
+}
